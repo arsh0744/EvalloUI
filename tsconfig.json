@@ -2,8 +2,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "baseUrl": "https://github.com/arsh0744/EvalloUI.git",
+    "outDir": "Web",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
