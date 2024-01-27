@@ -1,0 +1,112 @@
+<div class="container pt-5">
+    <div class="d-flex justify-content-center align-items-center pt-5">
+      <div class="">
+        <div class="text-center">
+          <img
+            class="mb-4"
+            src="assets/logo.png"
+            style="width: 180px"
+          />
+        </div>
+        <h5 class="mb-3" style="text-align: center;">Welcome to Evallo</h5>
+  
+    
+     
+        <hr />
+   
+  
+          <div class="pillSwitcher">
+  
+            <mdb-tabs [pills]="true" [fill]="true">
+              <mdb-tab title="Login">
+                <form [formGroup]="loginForm" (ngSubmit)="callLoginApi()">
+                                  
+                  <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="email"  class="form-control" formControlName="loginCred" />
+                    <label mdbValidate mdbLabel class="form-label" for="loginName">Email or username</label>
+                  </mdb-form-control>
+            
+                  <mdb-form-control class="mb-4">
+                    <input mdbInput type="password"  class="form-control" formControlName="loginPass"/>
+                    <label mdbLabel class="form-label" for="loginPassword">Password</label>
+                  </mdb-form-control>
+            
+                          
+                  <button mdbRipple [disabled]="!loginForm.valid" *ngIf="showLoading==false"
+                   type="submit" class="btn btn-primary btn-block mb-4">
+                    Sign in
+                  </button>
+                  <div class="row" style="display: flex; 
+                  justify-content: center;" *ngIf="showLoading==true">
+                    <div class="spinner-border text-primary" role="status" style="display: flex;justify-content: center;">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <div class="row" style="display: flex; 
+                  justify-content: center;text-align: center;" *ngIf="showErrorMessage==true" >
+                    
+                      <span class="{{registerError?'text-danger':'text-success'}}">{{regsisterationReponse}}</span>
+                    
+                  </div>
+            
+                  
+                </form></mdb-tab
+              >
+              <mdb-tab title="Content Creator Registration">
+                <form [formGroup]="ccRegisForm" (ngSubmit)="addNewCCForEvallo()">
+                            
+                  <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="text"  class="form-control" formControlName="registerName" />
+                    <label mdbLabel class="form-label" for="registerName">Name</label>
+                  </mdb-form-control>
+            
+                  <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="text"  class="form-control" formControlName="registerUsername" />
+                    <label mdbLabel class="form-label" for="registerUsername">Username</label>
+                  </mdb-form-control>
+            
+                  <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="email"  class="form-control" formControlName="registerEmail" />
+                    <label mdbLabel class="form-label" for="registerEmail">Email</label>
+                  </mdb-form-control>
+            
+                  <mdb-form-control class="mb-4" >
+                    <input mdbValidate mdbInput type="password"  class="form-control" formControlName="registerPassword" />
+                    <label mdbLabel class="form-label" for="registerPassword">Password</label>
+                  </mdb-form-control>
+            
+               
+            
+                  <button mdbRipple type="submit" [disabled]="!ccRegisForm.valid" *ngIf="showLoading==false"
+                    class="btn btn-primary btn-block mb-3">
+                    Sign Up
+                  </button>
+                  <div class="row" style="display: flex; 
+                  justify-content: center;" *ngIf="showLoading==true">
+                    <div class="spinner-border text-primary" role="status" style="display: flex;justify-content: center;">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <div class="row" style="display: flex; 
+                  justify-content: center;text-align: center;" *ngIf="showErrorMessage==true" >
+                    
+                      <span class="{{registerError?'text-danger':'text-success'}}">{{regsisterationReponse}}</span>
+                    
+                  </div>
+  
+                  
+                </form></mdb-tab
+              >
+            </mdb-tabs>
+  
+  
+          </div>
+  
+  
+  
+  
+  
+  
+      </div>
+    </div>
+  </div>

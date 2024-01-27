@@ -1,0 +1,57 @@
+<div class="FullDisplay" style="width: 100%;height: 100vh;display: flex;justify-content: center; 
+align-items: center;align-content: center;justify-items: center;">
+    <div class="displayForm" style="width: 70%;height: 70%;" >
+
+        <form [formGroup]="contentForm" (ngSubmit)="callSubmitContentApi()">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                  <input mdbValidate type="text" id="form6Example1" class="form-control" formControlName="title" />
+                  <label class="form-label" for="form6Example1">Title</label>
+                </div>
+              </div>
+              <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                  <input mdbValidate type="text" id="form6Example2" class="form-control" formControlName="description" />
+                  <label class="form-label" for="form6Example2">Description</label>
+                </div>
+              </div>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input mdbValidate type="text" id="form6Example3" 
+                placeholder="For Ex. https://www.google.com/"
+                class="form-control" formControlName="link" />
+                <label class="form-label" for="form6Example3">Link</label>
+              </div>
+          
+
+            <div data-mdb-input-init class="form-outline mb-4">
+              <textarea class="form-control" id="form6Example7" rows="4" formControlName="info"></textarea>
+              <label class="form-label" for="form6Example7">Additional information</label>
+            </div>
+          
+      
+          
+            <button data-mdb-ripple-init type="button" [disabled]="!contentForm.valid"
+            *ngIf="showLoading==false"
+                   type="submit" class="btn btn-primary btn-block mb-4"
+                >Create Content</button>
+                <div class="row" style="display: flex; 
+                justify-content: center;" *ngIf="showLoading==true">
+                  <div class="spinner-border text-primary" role="status" style="display: flex;justify-content: center;">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                <div class="row" style="display: flex; 
+                justify-content: center;text-align: center;" *ngIf="showErrorMessage==true" >
+                  
+                    <span class="{{registerError?'text-danger':'text-success'}}">{{regsisterationReponse}}</span>
+                  
+                </div>
+          </form>
+    
+    </div>
+</div>
+
