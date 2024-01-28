@@ -14,8 +14,8 @@ export class ServerApiService {
     private http : HttpClient,
     private Users : UserService
   ) { }
-  private  BaseUrl =  "http://localhost:3000/.netlify/functions/" ;
-  //private  BaseUrl =  "https://evalloserver.netlify.app/.netlify/functions/" ;
+  //private  BaseUrl =  "http://localhost:3000/.netlify/functions/" ;
+  private  BaseUrl =  "https://evalloserver.netlify.app/.netlify/functions/" ;
 
   url_Create_New_CC = this.BaseUrl + 
                       'api/addNewCC' ;
